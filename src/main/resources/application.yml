@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: hexagonal-architecture
+  profiles:
+    # The outbound adapter is chosen here and nowhere else. Switching to `memory` runs the
+    # whole application, REST included, with no database at all.
+    default: jpa
+  datasource:
+    url: jdbc:postgresql://localhost:5432/booking
+    username: booking
+    password: booking
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+server:
+  error:
+    include-message: always
