@@ -43,6 +43,10 @@ dependencies {
     testImplementation("com.tngtech.archunit:archunit-junit5:1.4.1")
 }
 
+tasks.withType<JavaCompile> {
+    options.compilerArgs.add("-Xlint:deprecation")
+}
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }
